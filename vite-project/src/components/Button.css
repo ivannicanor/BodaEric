@@ -1,0 +1,177 @@
+/* Componente Button - Estilos base y variantes */
+
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border: none;
+  border-radius: var(--border-radius-lg);
+  font-family: var(--fuente-secundaria);
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 48px;
+  touch-action: manipulation;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.2;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Variantes de botones */
+.btn-primary {
+  background: linear-gradient(135deg, var(--verde-oscuro), var(--marron-pastel));
+  color: var(--blanco-roto);
+  box-shadow: 0 4px 15px var(--sombra-suave);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--verde-medio), var(--verde-pastel));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--sombra-media);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--marron-medio), var(--marron-pastel));
+  color: var(--blanco-roto);
+  box-shadow: 0 4px 15px var(--sombra-suave);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--marron-oscuro), var(--marron-medio));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--sombra-media);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--verde-pastel);
+  color: var(--verde-oscuro);
+  box-shadow: 0 2px 10px rgba(168, 213, 186, 0.2);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: var(--verde-pastel);
+  color: var(--blanco-roto);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--sombra-media);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--marron-oscuro);
+  box-shadow: none;
+  border: 1px solid transparent;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--marron-claro);
+  color: var(--marron-oscuro);
+  border-color: var(--marron-pastel);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--verde-medio), var(--verde-pastel));
+  color: var(--blanco-roto);
+  box-shadow: 0 4px 15px rgba(143, 188, 143, 0.3);
+}
+
+.btn-success:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(143, 188, 143, 0.4);
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, var(--dorado-suave), var(--marron-pastel));
+  color: var(--marron-oscuro);
+  box-shadow: 0 4px 15px rgba(244, 228, 188, 0.3);
+}
+
+.btn-warning:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--marron-pastel), var(--dorado-suave));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(244, 228, 188, 0.4);
+}
+
+/* Estado disabled */
+.btn-disabled,
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Tamaños adicionales */
+.btn-small {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.875rem;
+  min-height: 40px;
+  max-width: 200px;
+}
+
+.btn-large {
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  font-size: 1.125rem;
+  min-height: 56px;
+  max-width: 320px;
+}
+
+/* Efectos especiales */
+.btn-glow {
+  position: relative;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--verde-pastel), var(--marron-pastel), var(--verde-pastel));
+  border-radius: var(--border-radius-lg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn-glow:hover::before {
+  opacity: 0.7;
+}
+
+/* Animación de ripple para táctil */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.btn:active::after {
+  width: 120%;
+  height: 120%;
+}
+
+/* Responsive - Solo para casos especiales */
+@media (max-width: 320px) {
+  .btn {
+    max-width: 100%;
+    font-size: 0.9rem;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+}

@@ -1,7 +1,14 @@
 import './Hero.css'
 import FallingFlowers from './FallingFlowers'
+import Button from './Button'
 
 const Hero = () => {
+  const handleRSVP = () => {
+    console.log('Confirmar asistencia clicked!')
+    // Aquí puedes agregar la lógica para RSVP
+    // Por ejemplo, scroll a formulario o abrir modal
+  }
+
   return (
     <section className="hero">
       <div className="hero-background">
@@ -24,13 +31,15 @@ const Hero = () => {
           <div className="sparkle" style={{bottom: '35%', right: '15%', animationDelay: '1.5s'}}></div>
         </div>
         
-        <h1 className="hero-title">María & Carlos</h1>
+        <h1 className="hero-title">Eric & Sandra</h1>
         <p className="hero-subtitle">Nos casamos y queremos celebrarlo contigo</p>
         <p className="hero-date">15 de Junio, 2026</p>
         
         <div className="hero-buttons">
-          <button className="btn btn-primary">Confirmar Asistencia</button>
-          <button className="btn btn-outline">Ver Detalles</button>
+          <Button variant="primary" onClick={handleRSVP}>
+            Confirmar Asistencia
+          </Button>
+          
         </div>
       </div>
     </section>
