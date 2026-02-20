@@ -1,0 +1,152 @@
+/* Componente Timeline - Optimizado para móvil */
+
+.timeline {
+  position: relative;
+  padding: var(--spacing-xl) 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--verde-pastel), var(--marron-pastel));
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  margin-left: 40px;
+}
+
+.timeline-content {
+  flex: 1;
+  padding: var(--spacing-md);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -29px;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background: var(--verde-pastel);
+  border: 2px solid var(--blanco-roto);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 0 2px var(--marron-pastel);
+}
+
+.timeline-time {
+  color: var(--marron-medio);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-sm);
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--verde-pastel);
+}
+
+.timeline-title {
+  color: var(--verde-oscuro);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--fuente-elegante);
+  font-size: 1.3rem;
+}
+
+.timeline-location {
+  color: var(--marron-medio);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--marron-claro);
+  border-radius: var(--border-radius-sm);
+  border-left: 3px solid var(--marron-pastel);
+}
+
+/* Variantes de marcadores */
+.timeline-item:nth-child(1) .timeline-marker {
+  background: var(--verde-medio);
+}
+
+.timeline-item:nth-child(2) .timeline-marker {
+  background: var(--marron-pastel);
+}
+
+.timeline-item:nth-child(3) .timeline-marker {
+  background: var(--verde-pastel);
+}
+
+.timeline-item:nth-child(4) .timeline-marker {
+  background: var(--dorado-suave);
+  box-shadow: 0 0 0 2px var(--verde-claro);
+}
+
+/* Efectos hover */
+.timeline-content:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 24px var(--sombra-media);
+}
+
+.timeline-marker:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+/* Animaciones de entrada */
+.timeline-item {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.timeline-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Estados especiales */
+.timeline-item.completed .timeline-marker {
+  background: var(--verde-medio);
+  box-shadow: 0 0 0 2px var(--verde-claro), 0 0 10px var(--verde-pastel);
+}
+
+.timeline-item.current .timeline-marker {
+  background: var(--dorado-suave);
+  box-shadow: 0 0 0 3px var(--crema), 0 0 15px var(--dorado-suave);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 3px var(--crema), 0 0 15px var(--dorado-suave);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(244, 228, 188, 0.3), 0 0 25px var(--dorado-suave);
+  }
+  100% {
+    box-shadow: 0 0 0 3px var(--crema), 0 0 15px var(--dorado-suave);
+  }
+}

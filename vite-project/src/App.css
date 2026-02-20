@@ -5,60 +5,6 @@
   background: linear-gradient(135deg, var(--blanco-roto) 0%, var(--verde-claro) 50%, var(--marron-claro) 100%);
 }
 
-/* Timeline de eventos */
-.timeline {
-  position: relative;
-  padding: var(--spacing-xl) 0;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 20px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--verde-pastel), var(--marron-pastel));
-}
-
-.timeline-item {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: var(--spacing-xl);
-  position: relative;
-  margin-left: 40px;
-}
-
-.timeline-content {
-  flex: 1;
-  padding: var(--spacing-md);
-}
-
-.timeline-marker {
-  position: absolute;
-  left: -29px;
-  top: 20px;
-  width: 16px;
-  height: 16px;
-  background: var(--verde-pastel);
-  border: 2px solid var(--blanco-roto);
-  border-radius: 50%;
-  z-index: 2;
-  box-shadow: 0 0 0 2px var(--marron-pastel);
-}
-
-.timeline-time {
-  color: var(--marron-medio);
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin-bottom: var(--spacing-sm);
-}
-
-.timeline-title {
-  color: var(--verde-oscuro);
-  margin-bottom: var(--spacing-sm);
-}
-
 /* Galería de fotos */
 .gallery {
   display: grid;

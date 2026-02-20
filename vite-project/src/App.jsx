@@ -1,78 +1,56 @@
 import { useState } from 'react'
 import './App.css'
 import Hero from './components/Hero'
+import Button from './components/Button'
+import Timeline from './components/Timeline'
 import FechaHoraLugar from './components/FechaHoraLugar'
 
 // Componente principal App
 function App() {
+  const handleContactClick = () => {
+    alert('¡Contáctanos para más información!')
+  }
+
+  const handleGalleryClick = () => {
+    console.log('Abrir galería de fotos')
+  }
+
+  // Datos del timeline
+  const weddingEvents = [
+    {
+      time: '16:30',
+      title: 'Ceremonia',
+      description: 'La ceremonia se realizará en un entorno natural rodeado de jardines.',
+      location: 'Jardín Principal'
+    },
+    {
+      time: '18:00', 
+      title: 'Cóctel',
+      description: 'Disfrutaremos de un cóctel mientras nos tomamos las fotos.',
+      location: 'Terraza del Salón'
+    },
+    {
+      time: '20:30',
+      title: 'Cena',
+      description: 'Una cena especial preparada con mucho cariño para todos.',
+      location: 'Salón Principal'
+    },
+    {
+      time: '23:00',
+      title: 'Fiesta',
+      description: '¡A bailar hasta que el cuerpo aguante!',
+      location: 'Pista de Baile'
+    }
+  ]
+
   return (
     <div className="app">
-      <Hero />
+    <Hero />
       
-      {/* Aquí puedes añadir más secciones */}
-      <section className="section">
-        <div className="container">
-          <h2 className="text-center">Nuestra Historia</h2>
-          <div className="divider"></div>
-          <p className="text-center">
-            Después de [X] años juntos, hemos decidido dar el gran paso. 
-            Queremos compartir este momento tan especial con las personas que más queremos.
-          </p>
-        </div>
-      </section>
-      
-      <section className="section section-alt">
-        <div className="container">
-          <h2 className="text-center">Detalles del Evento</h2>
-          <div className="divider"></div>
-          
-          <div className="timeline">
-            <div className="timeline-item">
-              <div className="timeline-content card">
-                <div className="timeline-time">16:30</div>
-                <h4 className="timeline-title">Ceremonia</h4>
-                <p>La ceremonia se realizará en un entorno natural rodeado de jardines.</p>
-              </div>
-              <div className="timeline-marker"></div>
-            </div>
-            
-            <div className="timeline-item">
-              <div className="timeline-content card">
-                <div className="timeline-time">18:00</div>
-                <h4 className="timeline-title">Cóctel</h4>
-                <p>Disfrutaremos de un cóctel mientras nos tomamos las fotos.</p>
-              </div>
-              <div className="timeline-marker"></div>
-            </div>
-            
-            <div className="timeline-item">
-              <div className="timeline-content card">
-                <div className="timeline-time">20:30</div>
-                <h4 className="timeline-title">Cena</h4>
-                <p>Una cena especial preparada con mucho cariño para todos.</p>
-              </div>
-              <div className="timeline-marker"></div>
-            </div>
-            
-            <div className="timeline-item">
-              <div className="timeline-content card">
-                <div className="timeline-time">23:00</div>
-                <h4 className="timeline-title">Fiesta</h4>
-                <p>¡A bailar hasta que el cuerpo aguante!</p>
-              </div>
-              <div className="timeline-marker"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-
-
-      <FechaHoraLugar/>
+    {/* Aquí puedes añadir más secciones No borrar a hablar con los prometidos*/}
+    <Timeline events={weddingEvents} />
+    <FechaHoraLugar />
     </div>
-    
   )
 }
 
