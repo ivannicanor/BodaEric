@@ -1,0 +1,38 @@
+.place {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.map-conteiner {
+  flex: 1;
+  min-width: 320px;
+}
+
+.map {
+  width: 100%;
+  height: 400px; /* obligatorio para que se vea */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.googleMap {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map-information-conteiner {
+  flex: 1;
+  min-width: 280px;
+}
+
+@media (max-width: 900px) {
+  .place {
+    flex-direction: column;
+  }
+
+  .map {
+    height: 320px;
+  }
+}

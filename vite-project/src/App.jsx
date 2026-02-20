@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Hero from './components/Hero'
+import FechaHoraLugar from './components/FechaHoraLugar'
 
 // Componente principal App
 function App() {
@@ -64,7 +65,14 @@ function App() {
           </div>
         </div>
       </section>
+
+
+
+
+
+      <FechaHoraLugar/>
     </div>
+    
   )
 }
 
