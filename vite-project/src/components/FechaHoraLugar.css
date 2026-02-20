@@ -1,3 +1,4 @@
+/* inicio place */
 .place {
   display: flex;
   gap: 24px;
@@ -36,3 +37,84 @@
     height: 320px;
   }
 }
+/* fin place */
+
+/* inicio date */
+
+/* (opcional) centra el bloque del contador en la sección */
+.date-counter-conteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}
+
+/* 2x2 como la foto */
+.date-counter {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: min(420px, 100%);
+}
+
+/* cada “tarjeta” */
+.counter-box {
+  min-height: 110px;
+  border-radius: 14px;
+
+  /* centra el contenido */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* estilo tipo glass */
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(10px);
+
+  /* sombra suave */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+
+  /* separación interior */
+  padding: 16px;
+}
+
+/* número grande */
+.counter-value {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* texto pequeño debajo */
+.counter-label {
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+/* opcional: efecto “pressed” al pasar el ratón */
+.counter-box:hover {
+  transform: translateY(-1px);
+  transition: transform 0.15s ease;
+}
+
+/* móvil */
+@media (max-width: 420px) {
+  .counter-box {
+    min-height: 96px;
+  }
+  .counter-value {
+    font-size: 30px;
+  }
+}
+
+/* fin date */
+
+
+/* inicio outfit */
+/* fin outfit */
