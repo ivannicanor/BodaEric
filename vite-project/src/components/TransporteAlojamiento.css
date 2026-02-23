@@ -1,0 +1,131 @@
+/* Contenedor general */
+.transport-accommodation {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* izquierda | línea | derecha */
+  gap: 28px;
+  align-items: stretch;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px 16px;
+}
+
+/* Bloques */
+.transport,
+.accommodation {
+  border-radius: 16px;
+  padding: 22px;
+
+  /* estilo tipo “glass” suave */
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+/* Títulos */
+.transport h1,
+.accommodation h1 {
+  margin: 0 0 12px 0;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+}
+
+/* Texto */
+.transport p,
+.accommodation p {
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* Link alojamiento */
+.accommodation a {
+  display: inline-block;
+  margin-top: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+/* Línea separadora (vertical en desktop) */
+.line {
+  width: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Responsive: apila y la línea se vuelve horizontal */
+@media (max-width: 900px) {
+  .transport-accommodation {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 18px;
+    
+  }
+
+  .line {
+    width: 100%;
+    height: 2px;
+  }
+}
+
+/* Centrar contenido en las tarjetas (como la imagen) */
+.transport,
+.accommodation {
+  text-align: center;
+}
+
+/* Móvil: un pelín más de separación y padding lateral consistente */
+@media (max-width: 900px) {
+  .transport-accommodation {
+    gap: 22px;       /* antes 18px */
+    padding: 18px 16px; /* para no variar el lateral */
+  }
+}
+
+/* Link más visible y bonito */
+.accommodation a {
+  margin-top: 16px;
+  font-weight: 700;
+}
+
+
+
+
+/* line separatoria del bus */
+
+
+/* LINEA CON ICONO CENTRADO */
+.line {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;  /* centra el icono */
+  align-items: center;
+  padding: 14px 0;          /* “aire” vertical */
+}
+
+/* La barra ocupa TODO el ancho por detrás */
+.line-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* El círculo queda por encima de la línea */
+.line-icon {
+  position: relative;
+  z-index: 1;
+}
+/* Tamaño del icono dentro del círculo */
+.line-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
