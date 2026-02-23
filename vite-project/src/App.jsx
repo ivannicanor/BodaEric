@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Button from './components/Button'
 import Timeline from './components/Timeline'
 import FechaHoraLugar from './components/FechaHoraLugar'
+import TransporteAlojamiento from './components/TransporteAlojamiento'
 
 // Componente principal App
 function App() {
@@ -50,6 +51,7 @@ function App() {
     {/* Aquí puedes añadir más secciones No borrar a hablar con los prometidos*/}
     <Timeline events={weddingEvents} />
     <FechaHoraLugar />
+    <TransporteAlojamiento/>
     </div>
   )
 }
