@@ -58,6 +58,7 @@ function FechaHoraLugar() {
         <section className="place-date-outfit">
             {/* //inicio Lugar */}
             <div className="place">
+                <h1>Ubicación</h1>
                 <div className="map-conteiner">
                     <div className="map">
                         <iframe
@@ -80,7 +81,9 @@ function FechaHoraLugar() {
             {/* inicio fecha */}
             <div className="date">
                 <div className="date-info-conteiner">
-                    <div className="date-info">{/* lo que quieras aquí */}</div>
+                    <div className="date-info">
+                        <h1>Cuenta atras</h1>
+                    </div>
                 </div>
 
                 <div className="date-counter-conteiner">
@@ -111,12 +114,21 @@ function FechaHoraLugar() {
 
             {/* inicio vestimenta */}
             <div className="outfit">
-                
+                <h1>Codigo de vestimenta</h1>
                 <div className="outfit-prohibited-conteiner">
-                    <div className="outfit-prohibited">{/* lo que quieras aquí */}</div>
+                    <div className="outfit-prohibited">
+
+                        <h2>Prohibiciones</h2>
+                        <p>Prohibidos los colores blanco y beige (mujeres y hombres).</p>
+
+                    </div>
                 </div>
                 <div className="outfit-recommended-conteiner">
-                    <div className="outfit-recommended">{/* lo que quieras aquí */}</div>
+                    <div className="outfit-recommended">
+                        <h2>Recomendaciones</h2>
+                        <p>Sentíos libres de llevar el estilo y prendas que deseeis.
+                            Id cómodos. Hay tierra y cesped en la finca, y tenéis que darlo todo en la fiesta.</p>
+                    </div>
                 </div>
 
             </div>

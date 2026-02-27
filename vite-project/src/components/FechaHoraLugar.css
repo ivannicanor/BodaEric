@@ -116,5 +116,97 @@
 /* fin date */
 
 
+
 /* inicio outfit */
+
+.outfit {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.outfit h1 {
+  margin: 0 0 28px 0;
+  font-size: 32px;
+  letter-spacing: 0.02em;
+}
+
+.outfit-prohibited-conteiner,
+.outfit-recommended-conteiner {
+  display: flex;
+  justify-content: center;
+}
+
+.outfit-prohibited,
+.outfit-recommended {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 18px;
+  padding: 24px;
+
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+
+  text-align: center;
+}
+
+.outfit-prohibited {
+  margin-bottom: 22px;
+}
+
+.outfit-prohibited h2,
+.outfit-recommended h2 {
+  margin: 0 0 14px 0;
+  font-size: 24px;
+}
+
+.outfit-prohibited p,
+.outfit-recommended p {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+/* Un pequeño matiz visual para distinguir bloques */
+.outfit-prohibited {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.outfit-recommended {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .outfit {
+    padding: 28px 16px;
+  }
+
+  .outfit h1 {
+    font-size: 28px;
+    margin-bottom: 22px;
+  }
+
+  .outfit-prohibited,
+  .outfit-recommended {
+    padding: 20px 18px;
+    border-radius: 16px;
+  }
+
+  .outfit-prohibited h2,
+  .outfit-recommended h2 {
+    font-size: 22px;
+  }
+
+  .outfit-prohibited p,
+  .outfit-recommended p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+
 /* fin outfit */
