@@ -1,7 +1,6 @@
 /* Contenedor general */
 .transport-accommodation {
   display: grid;
-  grid-template-columns: 1fr auto 1fr; /* izquierda | línea | derecha */
   gap: 28px;
   align-items: stretch;
   max-width: 980px;

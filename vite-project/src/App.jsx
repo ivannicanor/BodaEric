@@ -5,6 +5,7 @@ import Button from './components/Button'
 import Timeline from './components/Timeline'
 import FechaHoraLugar from './components/FechaHoraLugar'
 import TransporteAlojamiento from './components/TransporteAlojamiento'
+import PostBoda from './components/PostBoda'
 
 // Componente principal App
 function App() {
@@ -18,26 +19,34 @@ function App() {
 
   // Datos del timeline
   const weddingEvents = [
+
     {
-      time: '16:30',
+      time: '18:15',
+      title: 'Bienvenida de invitados',
+      description: 'Se dara la bienvenida a los invidatos.',
+      location: 'Jardín Principal'
+    },
+
+    {
+      time: '19:00',
       title: 'Ceremonia',
       description: 'La ceremonia se realizará en un entorno natural rodeado de jardines.',
       location: 'Jardín Principal'
     },
     {
-      time: '18:00', 
-      title: 'Cóctel',
+      time: '20:00-22:00',
+      title: 'Cóctel 1º parte',
       description: 'Disfrutaremos de un cóctel mientras nos tomamos las fotos.',
       location: 'Terraza del Salón'
     },
     {
-      time: '20:30',
-      title: 'Cena',
-      description: 'Una cena especial preparada con mucho cariño para todos.',
-      location: 'Salón Principal'
+      time: '22:00 - 00:00',
+      title: 'Cóctel 2º parte',
+      description: 'Disfrutaremos de un cóctel mientras nos tomamos las fotos.',
+      location: 'Terraza del Salón'
     },
     {
-      time: '23:00',
+      time: '00:00 - 05:00',
       title: 'Fiesta',
       description: '¡A bailar hasta que el cuerpo aguante!',
       location: 'Pista de Baile'
@@ -46,12 +55,13 @@ function App() {
 
   return (
     <div className="app">
-    <Hero />
-      
-    {/* Aquí puedes añadir más secciones No borrar a hablar con los prometidos*/}
-    <Timeline events={weddingEvents} />
-    <FechaHoraLugar />
-    <TransporteAlojamiento/>
+      <Hero />
+
+      {/* Aquí puedes añadir más secciones No borrar a hablar con los prometidos*/}
+      <Timeline events={weddingEvents} />
+      <FechaHoraLugar />
+      <TransporteAlojamiento />
+      <PostBoda />
     </div>
   )
 }

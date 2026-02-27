@@ -33,7 +33,7 @@ const Hero = () => {
         
         <h1 className="hero-title">Eric & Sandra</h1>
         <p className="hero-subtitle">Nos casamos y queremos celebrarlo contigo</p>
-        <p className="hero-date">15 de Junio, 2026</p>
+        <p className="hero-date">15 de Agosto, 2026</p>
         
         <div className="hero-buttons">
           <Button variant="primary" onClick={handleRSVP}>
