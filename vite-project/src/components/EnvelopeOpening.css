@@ -195,19 +195,25 @@
     0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Sello del sobre */
+/* Sello del sobre - Marca elegante de los novios */
 .envelope-seal {
   position: absolute;
-  top: 35px;
+  top: 25px;
   left: 50%;
   transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
-  background: radial-gradient(circle, var(--verde-intenso), var(--verde-oscuro));
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, 
+    #2c1810 0%,
+    #1a0f08 50%, 
+    #0d0704 100%);
   border-radius: 50%;
   z-index: 5;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  border: 3px solid var(--dorado-intenso);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.6),
+    inset 0 3px 8px rgba(255, 255, 255, 0.1),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.5);
+  border: 4px solid #D4AF37;
 }
 
 .seal-inner {
@@ -216,9 +222,15 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  font-size: 20px;
-  color: var(--dorado-suave);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
+  font-weight: 700;
+  color: #F5F5DC;
+  text-shadow: 
+    0 3px 6px rgba(0, 0, 0, 1),
+    0 0 10px rgba(0, 0, 0, 0.8),
+    0 1px 0px #D4AF37;
+  letter-spacing: 1.5px;
 }
 
 /* Solapa del sobre - completamente corregida */
@@ -568,12 +580,12 @@
   }
   
   .envelope-seal {
-    width: 30px;
-    height: 30px;
-    top: 30px;
+    width: 50px;
+    height: 50px;
+    top: 20px;
   }
   
   .seal-inner {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
