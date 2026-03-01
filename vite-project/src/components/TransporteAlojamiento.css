@@ -1,11 +1,15 @@
-/* Contenedor general */
+/* Contenedor general mejorado */
 .transport-accommodation {
   display: grid;
-  gap: 28px;
+  gap: 50px;
   align-items: stretch;
   max-width: 980px;
   margin: 0 auto;
   padding: 18px 16px;
+}
+
+.transport-accommodation-section {
+  padding: var(--spacing-3xl) 0;
 }
 
 /* Bloques */
@@ -14,11 +18,10 @@
   border-radius: 16px;
   padding: 22px;
 
-  /* estilo tipo “glass” suave */
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  /* estilo tipo "glass" suave mejorado */
+  background: var(--marron-muy-claro);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 32px var(--sombra-suave);
 }
 
 /* Títulos */

@@ -54,9 +54,14 @@ function FechaHoraLugar() {
 
 
     return (
-
-        <section className="place-date-outfit">
-            {/* //inicio Lugar */}
+        <>
+            <div className="section-divider"></div>
+            <section className="place-date-outfit">
+                <div className="container">
+                    <h2 className="section-title">Fecha, Hora y Lugar</h2>
+                    <div className="section-divider-small"></div>
+                    
+                    {/* //inicio Lugar */}
             <div className="place">
                 <h1>Ubicación</h1>
                 <div className="map-conteiner">
@@ -129,13 +134,12 @@ function FechaHoraLugar() {
                         <p>Sentíos libres de llevar el estilo y prendas que deseeis.
                             Id cómodos. Hay tierra y cesped en la finca, y tenéis que darlo todo en la fiesta.</p>
                     </div>
+                    </div>
                 </div>
-
-            </div>
             {/* fin vestimenta */}
-
+            </div>
         </section>
-
+        </>
 
 
     );

@@ -12,7 +12,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--verde-pastel), var(--marron-pastel));
+  background: linear-gradient(to bottom, var(--verde-suave), var(--marron-suave));
 }
 
 .timeline-item {
@@ -34,11 +34,11 @@
   top: 20px;
   width: 16px;
   height: 16px;
-  background: var(--verde-pastel);
+  background: var(--verde-suave);
   border: 2px solid var(--blanco-roto);
   border-radius: 50%;
   z-index: 2;
-  box-shadow: 0 0 0 2px var(--marron-pastel);
+  box-shadow: 0 0 0 2px var(--marron-suave);
 }
 
 .timeline-time {
@@ -149,4 +149,30 @@
   100% {
     box-shadow: 0 0 0 3px var(--crema), 0 0 15px var(--dorado-suave);
   }
+}
+
+/* Estilos para Timeline simplificados */
+.elvish-section-title {
+  font-family: var(--fuente-elegante) !important;
+  color: var(--verde-intenso) !important;
+  font-size: 2rem !important;
+  margin-bottom: var(--spacing-xl) !important;
+}
+
+.elvish-divider {
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--verde-suave) 20%, 
+    var(--dorado-suave) 50%, 
+    var(--verde-suave) 80%, 
+    transparent) !important;
+  height: 2px !important;
+}
+
+.elvish-location {
+  color: var(--verde-intenso) !important;
+  background: var(--verde-muy-claro) !important;
+  border-left: 3px solid var(--verde-suave) !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
 }

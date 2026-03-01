@@ -1,30 +1,48 @@
-/* Variables de colores para la boda */
+/* Importar fuentes élficas elegantes */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+/* Variables de colores para la boda - Paleta expandida */
 :root {
   /* Colores principales */
   --verde-pastel: #A8D5BA;
   --marron-pastel: #D4C4A8;
   
-  /* Tonos de verde */
+  /* Tonos de verde expandidos */
+  --verde-muy-claro: #F0F8F0;
   --verde-claro: #E8F5E8;
+  --verde-suave: #C8E6C9;
   --verde-medio: #8FBC8F;
+  --verde-intenso: #6B8E6B;
   --verde-oscuro: #556B2F;
+  --verde-profundo: #3E4F21;
   
-  /* Tonos de marrón/beige */
+  /* Tonos de marrón/beige expandidos */
+  --marron-muy-claro: #FAF7F2;
   --marron-claro: #F5F0E8;
+  --marron-suave: #E6D7A8;
   --marron-medio: #C4A484;
+  --marron-intenso: #A0522D;
   --marron-oscuro: #8B4513;
+  --marron-profundo: #654321;
   
-  /* Colores de apoyo */
+  /* Colores de apoyo mejorados */
   --blanco-roto: #FEFEFE;
   --crema: #FFF8DC;
+  --dorado-muy-suave: #F8F0E3;
   --dorado-suave: #F4E4BC;
+  --dorado-medio: #E6D7A8;
+  --dorado-intenso: #D4C19C;
   
-  /* Sombras y transparencias */
+  /* Sombras y transparencias mejoradas */
+  --sombra-muy-suave: rgba(139, 69, 19, 0.05);
   --sombra-suave: rgba(139, 69, 19, 0.1);
   --sombra-media: rgba(139, 69, 19, 0.2);
+  --sombra-intensa: rgba(139, 69, 19, 0.3);
   --overlay-claro: rgba(232, 245, 232, 0.9);
+  --overlay-verde: rgba(85, 107, 47, 0.1);
+  --overlay-marron: rgba(139, 69, 19, 0.1);
   
-  /* Tipografías */
+  /* Tipografías normales */
   --fuente-principal: 'Georgia', 'Times New Roman', serif;
   --fuente-secundaria: 'Lato', 'Arial', sans-serif;
   --fuente-elegante: 'Playfair Display', 'Georgia', serif;
@@ -64,7 +82,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Tipografías */
+/* Tipografías normales */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--fuente-elegante);
   color: var(--verde-oscuro);
@@ -83,6 +101,7 @@ h2 {
   font-size: 1.75rem;
   margin-bottom: var(--spacing-md);
   text-align: center;
+  color: var(--verde-intenso);
 }
 
 h3 {
@@ -100,16 +119,18 @@ p {
   text-align: justify;
 }
 
-/* Enlaces */
+/* Enlaces mejorados */
 a {
-  color: var(--verde-medio);
+  color: var(--verde-intenso);
   text-decoration: none;
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 a:hover {
   color: var(--verde-oscuro);
   text-decoration: underline;
+  text-decoration-color: var(--marron-medio);
 }
 
 /* Botones */
@@ -215,20 +236,23 @@ a:hover {
   font-weight: 500;
 }
 
+/* Formularios limpios */
 .form-input {
   width: 100%;
   padding: var(--spacing-md);
-  border: 2px solid var(--marron-claro);
+  border: 1px solid var(--marron-suave);
   border-radius: var(--border-radius-md);
   background: var(--blanco-roto);
   font-family: var(--fuente-secundaria);
   transition: all 0.3s ease;
+  color: var(--marron-oscuro);
 }
 
 .form-input:focus {
   outline: none;
-  border-color: var(--verde-pastel);
-  box-shadow: 0 0 0 3px rgba(168, 213, 186, 0.2);
+  border-color: var(--verde-intenso);
+  box-shadow: 0 0 0 2px var(--overlay-verde);
+  background: var(--verde-muy-claro);
 }
 
 .form-textarea {
@@ -317,11 +341,35 @@ a:hover {
   transform: scale(1.2);
 }
 
-/* Elementos decorativos */
+/* Elementos decorativos simplificados */
 .divider {
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--verde-pastel), transparent);
+  background: linear-gradient(90deg, transparent, var(--verde-suave), var(--dorado-suave), var(--verde-suave), transparent);
   margin: var(--spacing-2xl) 0;
+}
+
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--verde-suave), var(--dorado-suave), var(--verde-suave), transparent);
+  margin: var(--spacing-3xl) 0;
+  width: 100%;
+}
+
+.section-divider-small {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--marron-suave), transparent);
+  margin: var(--spacing-xl) 0;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-family: var(--fuente-elegante);
+  color: var(--verde-intenso);
+  font-size: 2rem;
+  margin-bottom: var(--spacing-lg);
 }
 
 .text-center {
@@ -329,10 +377,36 @@ a:hover {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--verde-pastel), var(--marron-pastel));
+  background: linear-gradient(135deg, var(--verde-suave), var(--dorado-suave), var(--marron-suave));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 1px 2px var(--sombra-suave));
+}
+
+/* Efectos mágicos globales */
+.section {
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, var(--verde-muy-claro) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, var(--marron-muy-claro) 0%, transparent 50%);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Animaciones */

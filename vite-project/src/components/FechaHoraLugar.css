@@ -70,13 +70,13 @@
   align-items: center;
   text-align: center;
 
-  /* estilo tipo glass */
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  backdrop-filter: blur(10px);
+  /* estilo tipo glass - más sutil */
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
 
   /* sombra suave */
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
   /* separación interior */
   padding: 16px;
@@ -146,10 +146,10 @@
   border-radius: 18px;
   padding: 24px;
 
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
   text-align: center;
 }
@@ -171,13 +171,13 @@
   font-size: 17px;
 }
 
-/* Un pequeño matiz visual para distinguir bloques */
+/* Un pequeño matiz visual para distinguir bloques - más sutil */
 .outfit-prohibited {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .outfit-recommended {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 /* Responsive */

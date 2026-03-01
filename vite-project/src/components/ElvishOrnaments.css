@@ -1,0 +1,218 @@
+/* Ornamentos Élficos */
+
+.elvish-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--spacing-lg) 0;
+  position: relative;
+}
+
+.elvish-ornament-center {
+  text-align: center;
+}
+
+.elvish-ornament-left {
+  justify-content: flex-start;
+}
+
+.elvish-ornament-right {
+  justify-content: flex-end;
+}
+
+/* Ornamentos de hojas */
+.ornament-leaves {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.leaf-ornament {
+  font-size: 1.2rem;
+  color: var(--verde-intenso);
+  filter: drop-shadow(0 0 4px var(--verde-suave));
+  animation: leafFloat 3s ease-in-out infinite;
+}
+
+.leaf-left {
+  transform: rotate(-15deg);
+  animation-delay: 0s;
+}
+
+.leaf-right {
+  transform: rotate(15deg) scaleX(-1);
+  animation-delay: 1.5s;
+}
+
+/* Ornamentos de vides */
+.ornament-vines {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.vine-segment {
+  font-size: 1.4rem;
+  color: var(--verde-medio);
+  filter: drop-shadow(0 0 3px var(--verde-suave));
+  animation: vineWave 4s ease-in-out infinite;
+}
+
+.vine-flip {
+  transform: scaleX(-1);
+  animation-delay: 2s;
+}
+
+/* Ornamentos de flores */
+.ornament-flowers {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.flower-ornament {
+  font-size: 1.1rem;
+  color: var(--dorado-intenso);
+  filter: drop-shadow(0 0 5px var(--dorado-suave));
+  animation: flowerBloom 5s ease-in-out infinite;
+}
+
+/* Ornamentos de runas */
+.ornament-runes {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.rune-symbol {
+  font-size: 1rem;
+  color: var(--marron-intenso);
+  filter: drop-shadow(0 0 3px var(--marron-suave));
+  animation: runeShimmer 6s ease-in-out infinite;
+}
+
+.rune-symbol:nth-child(1) { animation-delay: 0s; }
+.rune-symbol:nth-child(2) { animation-delay: 1.2s; }
+.rune-symbol:nth-child(4) { animation-delay: 2.4s; }
+.rune-symbol:nth-child(5) { animation-delay: 3.6s; }
+
+/* Elemento central */
+.ornament-center {
+  font-size: 1.5rem;
+  color: var(--dorado-suave);
+  text-shadow: 0 0 8px var(--dorado-intenso);
+  animation: centerGlow 3s ease-in-out infinite;
+  margin: 0 var(--spacing-sm);
+}
+
+/* Tamaños */
+.ornament-small {
+  transform: scale(0.8);
+}
+
+.ornament-medium {
+  transform: scale(1);
+}
+
+.ornament-large {
+  transform: scale(1.3);
+}
+
+/* Efectos especiales */
+.ornament-leaves::before,
+.ornament-vines::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--verde-suave), transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.ornament-flowers::before,
+.ornament-runes::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--dorado-suave), transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* Animaciones */
+@keyframes leafFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-15deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(-10deg);
+  }
+}
+
+@keyframes vineWave {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-5deg) scale(1.05);
+  }
+  75% {
+    transform: rotate(5deg) scale(0.95);
+  }
+}
+
+@keyframes flowerBloom {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1) rotate(10deg);
+    opacity: 1;
+  }
+}
+
+@keyframes runeShimmer {
+  0%, 100% {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 3px var(--marron-suave));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px var(--dorado-suave));
+  }
+}
+
+@keyframes centerGlow {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 8px var(--dorado-intenso);
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 0 0 15px var(--dorado-suave), 0 0 25px var(--verde-suave);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ornament-large {
+    transform: scale(1.1);
+  }
+  
+  .ornament-medium {
+    transform: scale(0.9);
+  }
+  
+  .ornament-small {
+    transform: scale(0.7);
+  }
+}

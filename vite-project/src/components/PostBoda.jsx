@@ -2,10 +2,14 @@ import "./PostBoda.css";
 
 function PostBoda() {
     return (
-        <section className="Postwedding">
-            <h1>PostBoda</h1>
+        <>
+            <div className="section-divider"></div>
+            <section className="Postwedding">
+                <div className="container">
+                    <h2 className="section-title">PostBoda</h2>
+                    <div className="section-divider-small"></div>
 
-            {/* inicio asistencia */}
+                    {/* inicio asistencia */}
             <div className="attendance">
                 <p>
                     El domingo 16 de agosto, seréis bienvenidos de nuevo en la finca sobre las 12:00 h de la mañana, para realizar una comida conjunta, vernos las caras de resaca y compartir momentos del día anterior.
@@ -81,9 +85,11 @@ function PostBoda() {
                 <p>
                     La boda finalmente acabará el domingo 16 de agosto a las 18:00h, cuando tendremos que volver todos a casa :(
                 </p>
-            </div>
-            {/* fin finboda */}
-        </section>
+                    </div>
+                    {/* fin encuesta */}
+                </div>
+            </section>
+        </>
     );
 }
 

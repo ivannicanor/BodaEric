@@ -2,7 +2,33 @@
 
 .app {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--blanco-roto) 0%, var(--verde-claro) 50%, var(--marron-claro) 100%);
+  background: linear-gradient(135deg, var(--blanco-roto) 0%, var(--verde-muy-claro) 30%, var(--marron-muy-claro) 70%, var(--dorado-muy-suave) 100%);
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Estados de visibilidad para la animación de apertura */
+.app-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+}
+
+.app-visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1);
+  animation: app-fade-in 0.8s ease-out;
+}
+
+@keyframes app-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 /* Galería de fotos */

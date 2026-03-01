@@ -4,8 +4,8 @@ const Timeline = ({ events = [] }) => {
   return (
      <section className="section section-alt">
         <div className="container">
-          <h2 className="text-center">Detalles del Evento</h2>
-          <div className="divider"></div>
+          <h2 className="text-center elvish-section-title">Cronograma del Día</h2>
+          <div className="divider elvish-divider"></div>
     <div className="timeline">
       {events.map((event, index) => (
         <div key={index} className="timeline-item">
@@ -14,8 +14,8 @@ const Timeline = ({ events = [] }) => {
             <h4 className="timeline-title">{event.title}</h4>
             <p>{event.description}</p>
             {event.location && (
-              <div className="timeline-location">
-                📍 {event.location}
+              <div className="timeline-location elvish-location">
+                {event.location}
               </div>
             )}
           </div>

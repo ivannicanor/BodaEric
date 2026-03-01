@@ -21,7 +21,7 @@ const Hero = () => {
       </div>
       
       {/* Componente de flores cayendo optimizado para móvil */}
-      <FallingFlowers count={6} />
+      <FallingFlowers count={4} />
       
       <div className="hero-content">
         <div className="hero-sparkles">
@@ -31,9 +31,15 @@ const Hero = () => {
           <div className="sparkle" style={{bottom: '35%', right: '15%', animationDelay: '1.5s'}}></div>
         </div>
         
-        <h1 className="hero-title">Eric & Sandra</h1>
-        <p className="hero-subtitle">Nos casamos y queremos celebrarlo contigo</p>
-        <p className="hero-date">15 de Agosto, 2026</p>
+        <h1 className="hero-title">
+          Eric & Sandra
+        </h1>
+        <p className="hero-subtitle">
+          Nos casamos y queremos celebrarlo contigo
+        </p>
+        <p className="hero-date">
+          15 de Agosto, 2026
+        </p>
         
         <div className="hero-buttons">
           <Button variant="primary" onClick={handleRSVP}>

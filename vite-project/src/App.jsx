@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Hero from './components/Hero'
 import Button from './components/Button'
@@ -6,9 +6,22 @@ import Timeline from './components/Timeline'
 import FechaHoraLugar from './components/FechaHoraLugar'
 import TransporteAlojamiento from './components/TransporteAlojamiento'
 import PostBoda from './components/PostBoda'
+import EnvelopeOpening from './components/EnvelopeOpening'
 
 // Componente principal App
 function App() {
+  const [showEnvelopeAnimation, setShowEnvelopeAnimation] = useState(false)
+  const [isFirstVisit, setIsFirstVisit] = useState(false)
+
+  useEffect(() => {
+    // Verificar si es la primera visita
+    const hasVisited = localStorage.getItem('hasVisitedWeddingSite')
+    if (!hasVisited) {
+      setIsFirstVisit(true)
+      setShowEnvelopeAnimation(true)
+      localStorage.setItem('hasVisitedWeddingSite', 'true')
+    }
+  }, [])
   const handleContactClick = () => {
     alert('¡Contáctanos para más información!')
   }
@@ -16,6 +29,29 @@ function App() {
   const handleGalleryClick = () => {
     console.log('Abrir galería de fotos')
   }
+
+  const handleAnimationComplete = () => {
+    setShowEnvelopeAnimation(false)
+  }
+
+  // Función para resetear y volver a mostrar la animación (solo para pruebas)
+  const resetAnimation = () => {
+    localStorage.removeItem('hasVisitedWeddingSite')
+    setShowEnvelopeAnimation(true)
+  }
+
+  // Detectar combinación de teclas Ctrl+Shift+R para resetear animación
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'R') {
+        e.preventDefault()
+        resetAnimation()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyPress)
+    return () => document.removeEventListener('keydown', handleKeyPress)
+  }, [])
 
   // Datos del timeline
   const weddingEvents = [
@@ -54,15 +90,23 @@ function App() {
   ]
 
   return (
-    <div className="app">
-      <Hero />
+    <>
+      {/* Mostrar animación solo en la primera visita */}
+      {showEnvelopeAnimation && (
+        <EnvelopeOpening onAnimationComplete={handleAnimationComplete} />
+      )}
+      
+      {/* Contenido principal de la página */}
+      <div className={`app ${showEnvelopeAnimation ? 'app-hidden' : 'app-visible'}`}>
+        <Hero />
 
-      {/* Aquí puedes añadir más secciones No borrar a hablar con los prometidos*/}
-      <Timeline events={weddingEvents} />
-      <FechaHoraLugar />
-      <TransporteAlojamiento />
-      <PostBoda />
-    </div>
+        {/* Aquí puedes añadir más secciones No borrar a hablar con los prometidos*/}
+        <Timeline events={weddingEvents} />
+        <FechaHoraLugar />
+        <TransporteAlojamiento />
+        <PostBoda />
+      </div>
+    </>
   )
 }
 
