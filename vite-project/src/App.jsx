@@ -58,7 +58,7 @@ function App() {
 
     {
       time: '18:15',
-      title: 'Bienvenida de invitados',
+      title: 'Llegada de invitados',
       description: 'Se dara la bienvenida a los invidatos.',
       location: 'Jardín Principal'
     },
