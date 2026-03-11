@@ -7,6 +7,7 @@ import FechaHoraLugar from './components/FechaHoraLugar'
 import TransporteAlojamiento from './components/TransporteAlojamiento'
 import PostBoda from './components/PostBoda'
 import EnvelopeOpening from './components/EnvelopeOpening'
+import Alergenos from './components/Alergenos'
 
 // Componente principal App
 function App() {
@@ -104,6 +105,7 @@ function App() {
         <Timeline events={weddingEvents} />
         <FechaHoraLugar />
         <TransporteAlojamiento />
+        <Alergenos />
         <PostBoda />
       </div>
     </>
