@@ -1,0 +1,30 @@
+/* react-select (Creatable) */
+.rs__control {
+  padding: 6px 6px;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  background: rgba(255, 255, 255, 0.22) !important;
+  box-shadow: none !important;
+}
+
+.rs__control--is-focused {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.18) !important;
+}
+
+.rs__value-container {
+  padding: 0 8px !important;
+}
+
+.rs__input-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.rs__menu {
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.rs__option {
+  cursor: pointer;
+}
