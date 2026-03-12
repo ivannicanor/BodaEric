@@ -9,19 +9,18 @@ const Hero = () => {
     // Por ejemplo, scroll a formulario o abrir modal
   }
 
+  const noviosImg = new URL('../assets/2.jpg', import.meta.url).href
+
   return (
     <section className="hero">
       <div className="hero-background">
         <div className="hero-overlay"></div>
         <img 
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+          src={noviosImg}
           alt="Boda romántica" 
           className="hero-image"
         />
       </div>
-      
-      {/* Componente de flores cayendo optimizado para móvil */}
-      <FallingFlowers count={4} />
       
       <div className="hero-content">
         <div className="hero-sparkles">
@@ -32,7 +31,7 @@ const Hero = () => {
         </div>
         
         <h1 className="hero-title">
-          Eric & Sandra
+          Sandra & Eric
         </h1>
         <p className="hero-subtitle">
           Nos casamos y queremos celebrarlo contigo
@@ -45,7 +44,6 @@ const Hero = () => {
           <Button variant="primary" onClick={handleRSVP}>
             Confirmar Asistencia
           </Button>
-          
         </div>
       </div>
     </section>

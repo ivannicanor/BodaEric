@@ -13,7 +13,7 @@ function FechaHoraLugar() {
 
     //inicio fecha
     // ✅ FECHA OBJETIVO (cámbiala)
-    const targetDate = new Date(2026, 7, 15, 0, 0, 0);
+    const targetDate = new Date(2026, 8, 15, 0, 0, 0);
 
     const getTimeLeft = () => {
         const now = Date.now();
@@ -119,24 +119,23 @@ function FechaHoraLugar() {
 
             {/* inicio vestimenta */}
             <div className="outfit">
-                <h1>Codigo de vestimenta</h1>
+                <h1>Código de vestimenta</h1>
                 <div className="outfit-prohibited-conteiner">
                     <div className="outfit-prohibited">
-
                         <h2>Prohibiciones</h2>
                         <p>Prohibidos los colores blanco y beige (mujeres y hombres).</p>
-
                     </div>
                 </div>
                 <div className="outfit-recommended-conteiner">
                     <div className="outfit-recommended">
                         <h2>Recomendaciones</h2>
-                        <p>Sentíos libres de llevar el estilo y prendas que deseeis.
-                            Id cómodos. Hay tierra y cesped en la finca, y tenéis que darlo todo en la fiesta.</p>
-                    </div>
+                        <p>
+                            Sentíos libres de llevar el estilo y prendas que deseéis.
+                            Id cómodos. Hay tierra y césped en la finca, y tenéis que darlo todo en la fiesta.
+                        </p>
                     </div>
                 </div>
-            {/* fin vestimenta */}
+            </div>
             </div>
         </section>
         </>

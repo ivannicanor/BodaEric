@@ -4,7 +4,6 @@ import { useState } from "react";
 function PostBoda() {
     const [formData, setFormData] = useState({
         nombre_apellidos: "",
-        numero_personas: "",
         asistencia: "",
         comentario: ""
     });
@@ -50,7 +49,6 @@ function PostBoda() {
             setMensaje("✅ Respuesta enviada correctamente");
             setFormData({
                 nombre_apellidos: "",
-                numero_personas: "",
                 asistencia: "",
                 comentario: ""
             });
@@ -95,20 +93,6 @@ function PostBoda() {
                                 />
                             </div>
 
-                            <div className="survey-field">
-                                <label htmlFor="numero_personas">¿Cuántas personas vendréis?</label>
-                                <input
-                                    type="number"
-                                    id="numero_personas"
-                                    name="numero_personas"
-                                    min="1"
-                                    placeholder="Ej: 2"
-                                    value={formData.numero_personas}
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </div>
-
                             <fieldset className="survey-options">
                                 <legend>¿Vendrás a la postboda?</legend>
 
@@ -133,17 +117,6 @@ function PostBoda() {
                                         onChange={handleChange}
                                     />
                                     No podré asistir
-                                </label>
-
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="asistencia"
-                                        value="duda"
-                                        checked={formData.asistencia === "duda"}
-                                        onChange={handleChange}
-                                    />
-                                    Aún no lo sé
                                 </label>
                             </fieldset>
 

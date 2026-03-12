@@ -60,14 +60,14 @@ function App() {
     {
       time: '18:15',
       title: 'Llegada de invitados',
-      description: 'Se dara la bienvenida a los invidatos.',
+      description: 'Tendreis disponible una barra para tomar algo fresquito, hasta que lleguen los novios.',
       location: 'Jardín Principal'
     },
 
     {
       time: '19:00',
       title: 'Ceremonia',
-      description: 'La ceremonia se realizará en un entorno natural rodeado de jardines.',
+      description: 'La ceremonia se realizará en un entorno natural encabezado por un gran árbol llorón',
       location: 'Jardín Principal'
     },
     {

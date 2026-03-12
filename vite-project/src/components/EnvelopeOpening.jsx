@@ -62,7 +62,7 @@ const EnvelopeOpening = ({ onAnimationComplete }) => {
           
           {/* Sello del sobre */}
           <div className="envelope-seal">
-            <div className="seal-inner">E&S</div>
+            <div className="seal-inner">S&E</div>
           </div>
           
           {/* Solapa que se abre */}
@@ -75,7 +75,7 @@ const EnvelopeOpening = ({ onAnimationComplete }) => {
           {/* Texto en el sobre */}
           <div className="envelope-names">
             <div className="names-text">
-              <h1>Eric & Sandra</h1>
+              <h1>Sandra & Eric</h1>
               <p>15 de Agosto, 2026</p>
               <div className="ornamental-line"></div>
             </div>
