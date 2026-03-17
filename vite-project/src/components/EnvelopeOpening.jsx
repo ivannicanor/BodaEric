@@ -1,107 +1,62 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './EnvelopeOpening.css'
+import introVideo from '../assets/video.mp4'
+
+const LINES = [
+  { text: 'En un rincón, encantado del bosque,', type: 'normal' },
+  { text: 'donde los árboles usan historias', type: 'normal' },
+  { text: 'y el agua canta al pasar,', type: 'normal' },
+  { text: 'Sandra y Eric', type: 'names' },
+  { text: 'han decidido entrelazar sus destinos', type: 'normal' },
+  { text: 'bajo el brazo de un gran árbol llorón.', type: 'normal' },
+  { text: 'Te invitamos a compartir con nosotros este día,', type: 'normal' },
+  { text: 'lleno de magia, amor y fantasía.', type: 'normal' },
+  { text: 'Ven con el corazón abierto y, si te atreves,', type: 'normal' },
+  { text: 'deja que las hadas te guíen entre la luz,', type: 'normal' },
+  { text: 'las flores y los sueños.', type: 'normal' },
+]
 
 const EnvelopeOpening = ({ onAnimationComplete }) => {
-  const [animationStage, setAnimationStage] = useState('envelope-floating')
+  const [showText, setShowText] = useState(false)
+  const [fadeOut, setFadeOut] = useState(false)
+  const completionTimerRef = useRef(null)
 
   useEffect(() => {
-    // Secuencia de animación corregida
-    const timer1 = setTimeout(() => {
-      setAnimationStage('envelope-ready')
-    }, 1000) // Preparar el sobre
-
-    const timer2 = setTimeout(() => {
-      setAnimationStage('envelope-seal-break')
-    }, 2000) // Romper el sello
-
-    const timer3 = setTimeout(() => {
-      setAnimationStage('envelope-opening')
-    }, 3000) // Abrir el sobre
-
-    const timer4 = setTimeout(() => {
-      setAnimationStage('envelope-opened')
-    }, 4500) // Sobre completamente abierto
-
-    const timer5 = setTimeout(() => {
-      setAnimationStage('envelope-zoom-into')
-    }, 6000) // Hacer zoom hacia el interior
-
-    const timer6 = setTimeout(() => {
-      onAnimationComplete()
-    }, 7500) // Completar la animación
-
+    const textTimer = setTimeout(() => setShowText(true), 2000)
     return () => {
-      clearTimeout(timer1)
-      clearTimeout(timer2)
-      clearTimeout(timer3)
-      clearTimeout(timer4)
-      clearTimeout(timer5)
-      clearTimeout(timer6)
+      clearTimeout(textTimer)
+      if (completionTimerRef.current) clearTimeout(completionTimerRef.current)
     }
-  }, [onAnimationComplete])
+  }, [])
+
+  const handleVideoEnded = () => {
+    completionTimerRef.current = setTimeout(() => {
+      setFadeOut(true)
+      setTimeout(() => onAnimationComplete(), 1000)
+    }, 7000)
+  }
 
   return (
-    <div className={`envelope-container ${animationStage}`}>
-      {/* Fondo de partículas mágicas */}
-      <div className="magic-background">
-        {Array.from({ length: 20 }, (_, i) => (
-          <div key={i} className="magic-particle" 
-               style={{
-                 left: `${Math.random() * 100}%`,
-                 top: `${Math.random() * 100}%`,
-                 animationDelay: `${Math.random() * 3}s`
-               }}></div>
-        ))}
-      </div>
-
-      <div className="envelope-wrapper">
-        {/* Sobre principal */}
-        <div className="envelope">
-          {/* Parte trasera del sobre */}
-          <div className="envelope-back"></div>
-          
-          {/* Sello del sobre */}
-          <div className="envelope-seal">
-            <div className="seal-inner">S&E</div>
-          </div>
-          
-          {/* Solapa que se abre */}
-          <div className="envelope-flap">
-            <div className="envelope-flap-inner">
-              <div className="flap-shadow"></div>
-            </div>
-          </div>
-          
-          {/* Texto en el sobre */}
-          <div className="envelope-names">
-            <div className="names-text">
-              <h1>Sandra & Eric</h1>
-              <p>15 de Agosto, 2026</p>
-              <div className="ornamental-line"></div>
-            </div>
-          </div>
-          
-          {/* Parte delantera del sobre */}
-          <div className="envelope-front"></div>
-        </div>
-        
-        {/* Efectos decorativos mejorados */}
-        <div className="sparkles">
-          {Array.from({ length: 12 }, (_, i) => (
-            <div key={i} className="sparkle" 
-                 style={{
-                   top: `${20 + Math.random() * 60}%`,
-                   left: `${10 + Math.random() * 80}%`,
-                   animationDelay: `${Math.random() * 2}s`
-                 }}></div>
+    <div className={`intro-container${fadeOut ? ' fade-out' : ''}`}>
+      <video
+        className="intro-video"
+        src={introVideo}
+        autoPlay
+        muted
+        playsInline
+        onEnded={handleVideoEnded}
+      />
+      <div className={`text-overlay${showText ? ' visible' : ''}`}>
+        <div className="invitation-text">
+          {LINES.map((line, i) => (
+            <span
+              key={i}
+              className={`text-line${line.type === 'names' ? ' line-names' : ''}`}
+              style={{ animationDelay: `${i * 0.75}s` }}
+            >
+              {line.text}
+            </span>
           ))}
-        </div>
-        
-        {/* Ondas de impacto */}
-        <div className="impact-waves">
-          <div className="wave wave-1"></div>
-          <div className="wave wave-2"></div>
-          <div className="wave wave-3"></div>
         </div>
       </div>
     </div>
