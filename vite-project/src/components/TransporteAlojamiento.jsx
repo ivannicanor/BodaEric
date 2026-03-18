@@ -31,7 +31,7 @@ function TransporteAlojamiento() {
             {/* //inicio alojamiento */}
             <div className="accommodation">
                 <h2>Alojamiento</h2>
-                <p>Os recomendamos alojaros en Chinchón, para poder usar el bus para ir el día principal y poder consumir las sustancias que deseeis.</p>
+                <p>Os recomendamos alojaros en Chinchón pueblo, y así poder usar el bus (que facilitamos los novios) de ida a la finca el sábado y de vuelta tras la fiesta, para que podáis consumir las sustancias que deseéis 🥳</p>
             </div>
 
             {/* fin alojamiento */}
