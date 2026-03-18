@@ -67,13 +67,13 @@ function App() {
     {
       time: '19:00',
       title: 'Ceremonia',
-      description: 'La ceremonia se realizará en un entorno natural encabezado por un gran árbol llorón',
+      description: '',
       location: 'Jardín Principal'
     },
     {
       time: '20:00-22:00',
       title: 'Cóctel 1º parte',
-      description: 'Disfrutaremos de un cóctel mientras nos tomamos las fotos.',
+      description: '',
       location: 'Terraza del Salón'
     },
     {
