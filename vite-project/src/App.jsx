@@ -58,9 +58,9 @@ function App() {
   const weddingEvents = [
 
     {
-      time: '18:15',
+      time: '18:00',
       title: 'Llegada de invitados',
-      description: 'Tendreis disponible una barra para tomar algo fresquito, hasta que lleguen los novios.',
+      description: 'Dispondréis de una barra para tomar algo fresquito mientras llegan los novios. También tendréis una actividad especial para este ratito 😊',
       location: 'Jardín Principal'
     },
 
@@ -79,13 +79,13 @@ function App() {
     {
       time: '22:00 - 00:00',
       title: 'Cóctel 2º parte',
-      description: 'Disfrutaremos de un cóctel mientras nos tomamos las fotos.',
+      description: 'No os preocupes que habrá sillas para que podáis descansar antes de la fiesta.',
       location: 'Terraza del Salón'
     },
     {
       time: '00:00 - 05:00',
       title: 'Fiesta',
-      description: '¡A bailar hasta que el cuerpo aguante!',
+      description: '¡A bailar hasta que el cuerpo aguante! Habrá recena para compensar las copitas 🤪',
       location: 'Pista de Baile'
     }
   ]
