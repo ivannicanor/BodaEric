@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import './EnvelopeOpening.css'
 import introVideo from '../assets/video.mp4'
 
@@ -18,22 +18,21 @@ const LINES = [
 
 const EnvelopeOpening = ({ onAnimationComplete }) => {
   const [showText, setShowText] = useState(false)
+  const [showButton, setShowButton] = useState(false)
   const [fadeOut, setFadeOut] = useState(false)
-  const completionTimerRef = useRef(null)
 
   useEffect(() => {
     const textTimer = setTimeout(() => setShowText(true), 2000)
-    return () => {
-      clearTimeout(textTimer)
-      if (completionTimerRef.current) clearTimeout(completionTimerRef.current)
-    }
+    return () => clearTimeout(textTimer)
   }, [])
 
   const handleVideoEnded = () => {
-    completionTimerRef.current = setTimeout(() => {
-      setFadeOut(true)
-      setTimeout(() => onAnimationComplete(), 1000)
-    }, 7000)
+    setShowButton(true)
+  }
+
+  const handleContinue = () => {
+    setFadeOut(true)
+    setTimeout(() => onAnimationComplete(), 1000)
   }
 
   return (
@@ -59,6 +58,11 @@ const EnvelopeOpening = ({ onAnimationComplete }) => {
           ))}
         </div>
       </div>
+      {showButton && (
+        <button className="continue-btn" onClick={handleContinue}>
+          Continuar
+        </button>
+      )}
     </div>
   )
 }

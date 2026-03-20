@@ -77,7 +77,7 @@ function PostBoda() {
 
                     {/* inicio encuesta */}
                     <div className="attendance survey">
-                        <h2>Confirma tu asistencia</h2>
+                        <h2>Confirma tu asistencia a la POSTBODA</h2>
 
                         <form className="survey-form" onSubmit={handleSubmit}>
                             <div className="survey-field">
@@ -94,7 +94,7 @@ function PostBoda() {
                             </div>
 
                             <fieldset className="survey-options">
-                                <legend>¿Vendrás a la postboda?</legend>
+                                <legend>¿Vendrás?</legend>
 
                                 <label>
                                     <input

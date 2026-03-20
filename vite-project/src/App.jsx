@@ -8,6 +8,7 @@ import TransporteAlojamiento from './components/TransporteAlojamiento'
 import PostBoda from './components/PostBoda'
 import EnvelopeOpening from './components/EnvelopeOpening'
 import Alergenos from './components/Alergenos'
+import Carrusel from './components/Carrusel'
 
 // Componente principal App
 function App() {
@@ -67,13 +68,13 @@ function App() {
     {
       time: '19:00',
       title: 'Ceremonia',
-      description: 'La ceremonia se realizará en un entorno natural encabezado por un gran árbol llorón',
+      description: '',
       location: 'Jardín Principal'
     },
     {
       time: '20:00-22:00',
       title: 'Cóctel 1º parte',
-      description: 'Disfrutaremos de un cóctel mientras nos tomamos las fotos.',
+      description: '',
       location: 'Terraza del Salón'
     },
     {
@@ -102,6 +103,7 @@ function App() {
         <Hero />
 
         {/* Aquí puedes añadir más secciones No borrar a hablar con los prometidos*/}
+        <Carrusel />
         <Timeline events={weddingEvents} />
         <FechaHoraLugar />
         <TransporteAlojamiento />

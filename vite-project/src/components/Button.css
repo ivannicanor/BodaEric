@@ -26,27 +26,31 @@
 
 /* Variantes de botones mejoradas */
 .btn-primary {
-  background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--marron-intenso) 100%);
+  background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--marron-intenso) 50%, var(--verde-oscuro) 100%);
+  background-size: 200% 200%;
   color: var(--blanco-roto);
   box-shadow: 0 4px 15px var(--sombra-media);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-.btn-primary:hover:not(:disabled) {
-  background: linear-gradient(135deg, var(--verde-intenso) 0%, var(--verde-pastel) 100%);
+.btn-primary:hover:not(:disabled),
+.btn-primary:focus:not(:disabled) {
+  animation: gradient-shift 3s ease infinite;
   transform: translateY(-3px);
   box-shadow: 0 8px 25px var(--sombra-intensa);
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, var(--marron-medio) 0%, var(--dorado-intenso) 100%);
+  background: linear-gradient(135deg, var(--marron-medio) 0%, var(--dorado-intenso) 50%, var(--marron-medio) 100%);
+  background-size: 200% 200%;
   color: var(--blanco-roto);
   box-shadow: 0 4px 15px var(--sombra-media);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.btn-secondary:hover:not(:disabled) {
-  background: linear-gradient(135deg, var(--marron-intenso) 0%, var(--marron-pastel) 100%);
+.btn-secondary:hover:not(:disabled),
+.btn-secondary:focus:not(:disabled) {
+  animation: gradient-shift 3s ease infinite;
   transform: translateY(-3px);
   box-shadow: 0 8px 25px var(--sombra-intensa);
 }
@@ -82,29 +86,31 @@
 }
 
 .btn-success {
-  background: linear-gradient(135deg, var(--verde-medio) 0%, var(--verde-suave) 100%);
+  background: linear-gradient(135deg, var(--verde-medio) 0%, var(--verde-suave) 50%, var(--verde-medio) 100%);
+  background-size: 200% 200%;
   color: var(--verde-profundo);
   box-shadow: 0 4px 15px var(--sombra-suave);
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
-.btn-success:hover:not(:disabled) {
-  background: linear-gradient(135deg, var(--verde-intenso) 0%, var(--verde-medio) 100%);
-  color: var(--blanco-roto);
+.btn-success:hover:not(:disabled),
+.btn-success:focus:not(:disabled) {
+  animation: gradient-shift 3s ease infinite;
   transform: translateY(-3px);
   box-shadow: 0 8px 25px var(--sombra-media);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .btn-warning {
-  background: linear-gradient(135deg, var(--dorado-suave) 0%, var(--dorado-intenso) 100%);
+  background: linear-gradient(135deg, var(--dorado-suave) 0%, var(--dorado-intenso) 50%, var(--dorado-suave) 100%);
+  background-size: 200% 200%;
   color: var(--marron-profundo);
   box-shadow: 0 4px 15px var(--sombra-suave);
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
-.btn-warning:hover:not(:disabled) {
-  background: linear-gradient(135deg, var(--dorado-medio) 0%, var(--marron-suave) 100%);
+.btn-warning:hover:not(:disabled),
+.btn-warning:focus:not(:disabled) {
+  animation: gradient-shift 3s ease infinite;
   transform: translateY(-3px);
   box-shadow: 0 8px 25px var(--sombra-media);
 }
@@ -156,23 +162,17 @@
   opacity: 0.7;
 }
 
-/* Animación de ripple para táctil */
-.btn::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s;
-}
-
-.btn:active::after {
-  width: 120%;
-  height: 120%;
+/* Animación de gradiente cíclico */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Responsive - Solo para casos especiales */
