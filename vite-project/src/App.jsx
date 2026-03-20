@@ -8,6 +8,7 @@ import TransporteAlojamiento from './components/TransporteAlojamiento'
 import PostBoda from './components/PostBoda'
 import EnvelopeOpening from './components/EnvelopeOpening'
 import Alergenos from './components/Alergenos'
+import Carrusel from './components/Carrusel'
 
 // Componente principal App
 function App() {
@@ -102,6 +103,7 @@ function App() {
         <Hero />
 
         {/* Aquí puedes añadir más secciones No borrar a hablar con los prometidos*/}
+        <Carrusel />
         <Timeline events={weddingEvents} />
         <FechaHoraLugar />
         <TransporteAlojamiento />

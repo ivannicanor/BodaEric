@@ -106,6 +106,7 @@ function Alergenos() {
                   classNamePrefix="rs"                 // para poder estilizar por CSS
                   placeholder="Selecciona o escribe un alérgeno..."
                   isClearable
+                  maxMenuHeight={160}                  // Altura para mostrar aprox. 4 opciones (40px por opción)
                   options={options}
                   value={
                     formData.alergeno
